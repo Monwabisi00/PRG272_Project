@@ -26,5 +26,12 @@ namespace PRG272_Project
         {
 
         }
+
+        private void btnAddStd_Click(object sender, EventArgs e)
+        {
+            newStudent_form newStudent_Form = new newStudent_form();
+            newStudent_Form.Show();
+            this.Hide();
+        }
     }
 }
