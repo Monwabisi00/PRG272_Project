@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FBBD3C2E-73AC-4AD9-8AE4-FEC91B6DA244}</ProjectGuid>
+    <ProjectGuid>{907483D5-75D6-442C-8C36-B851EC90FA94}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PRG272_Project</RootNamespace>
     <AssemblyName>PRG272_Project</AssemblyName>
@@ -46,26 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DataHandler.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="newStudent_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="newStudent_form.Designer.cs">
-      <DependentUpon>newStudent_form.cs</DependentUpon>
+    <Compile Include="StudentManagementForm.Designer.cs">
+      <DependentUpon>StudentManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="newStudent_form.resx">
-      <DependentUpon>newStudent_form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +65,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentManagementForm.resx">
+      <DependentUpon>StudentManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
