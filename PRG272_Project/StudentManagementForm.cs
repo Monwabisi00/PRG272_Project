@@ -21,6 +21,8 @@ namespace PRG272_Project
             this.Font = new Font(familyName: "Segoe UI", emSize: 9);
 
             ShowAllStudents();
+
+            ShowReport();
         }
 
         private void ShowAllStudents()
@@ -48,6 +50,16 @@ namespace PRG272_Project
             }
 
             UpdateNavigationButtons();
+        }
+
+        private void ShowReport()
+        {
+            // Displaying report
+            txtTotal.Text = $"{DataHandler.LoadStudentsFromTextFile().Count()}";
+
+            // Calculate the average age safely, handling empty lists
+            decimal averageAge = DataHandler.LoadStudentsFromTextFile().Any() ? DataHandler.LoadStudentsFromTextFile().Average(student => student.Age) : 0;
+            txtAverage.Text = $"{averageAge:F2}";
         }
 
         //Enable/Disable nav buttons based on logic
@@ -156,6 +168,8 @@ namespace PRG272_Project
             Student newStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
 
             newStudent.SaveToTextFile();
+
+            ShowReport();
         }
 
         private void btnRefreshTableData_Click(object sender, EventArgs e)
