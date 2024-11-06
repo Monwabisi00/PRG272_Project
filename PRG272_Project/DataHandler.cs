@@ -44,5 +44,18 @@ namespace PRG272_Project
 
             return students;
         }
+
+        //Students Saved-J
+        public static void SaveStudentsToTextFile(List<Student> students)
+        {
+            using (StreamWriter writer = new StreamWriter(StudentsTextFilePath))
+            {
+                foreach (Student student in students)
+                {
+                    writer.WriteLine(student.ToString());
+                }
+            }
+        }
+
     }
 }

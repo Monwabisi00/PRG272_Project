@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace PRG272_Project
             ShowAllStudents();
 
             ShowReport();
+
+
         }
 
         private void ShowAllStudents()
@@ -157,6 +160,8 @@ namespace PRG272_Project
             }
         }
 
+        //Major pain getting the Age and Course Working
+
         private void btnAddNewStudent_Click(object sender, EventArgs e)
         {
             string studentId = txtNewStudentId.Text;
@@ -175,6 +180,59 @@ namespace PRG272_Project
         private void btnRefreshTableData_Click(object sender, EventArgs e)
         {
             ShowAllStudents();
+        }
+
+
+        //update and delete starts here.
+        private void btnUpdateStudent_Click(object sender, EventArgs e)
+{
+    if (dataGridStudents.CurrentRow != null)
+    {
+        string studentId = dataGridStudents.CurrentRow.Cells["StudentId"].Value.ToString();
+        string studentName = txtUpdateStudentName.Text;
+        string studentSurname = txtUpdateStudentSurname.Text;
+        decimal studentAge = nudUpdateStudentAge.Value;
+        string studentCourse = cmbUpdateStudentCourse.Text;
+
+        Student updatedStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
+        updatedStudent.UpdateStudentInTextFile();
+
+        ShowAllStudents();
+        ShowReport();
+    }
+}
+
+        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridStudents.CurrentRow != null)
+            {
+                string studentId = dataGridStudents.CurrentRow.Cells["StudentId"].Value.ToString();
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this student?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    Student.DeleteStudentFromTextFile(studentId);
+
+                    ShowAllStudents();
+                    ShowReport();
+                }
+            }
+        }
+                //Second Data field(I could fix it or remove it)
+        private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            {
+                DataGridViewRow row = dataGridStudents.Rows[e.RowIndex];
+
+                // Load data from selected row into update fields
+                txtUpdateStudentName.Text = row.Cells["Name"].Value.ToString();
+                txtUpdateStudentSurname.Text = row.Cells["Surname"].Value.ToString();
+                nudUpdateStudentAge.Value = Convert.ToDecimal(row.Cells["Age"].Value);
+                cmbUpdateStudentCourse.Text = row.Cells["Course"].Value.ToString();
+            }
         }
     }
 }

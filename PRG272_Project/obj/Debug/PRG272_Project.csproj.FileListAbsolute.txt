@@ -18,3 +18,13 @@ C:\Users\E6430\OneDrive\Desktop\BIT\Assignments\PRG 272\PRG272_Project\obj\Debug
 C:\Users\E6430\OneDrive\Desktop\BIT\Assignments\PRG 272\PRG272_Project\obj\Debug\PRG272_Project.csproj.CoreCompileInputs.cache
 C:\Users\E6430\OneDrive\Desktop\BIT\Assignments\PRG 272\PRG272_Project\obj\Debug\PRG272_Project.exe
 C:\Users\E6430\OneDrive\Desktop\BIT\Assignments\PRG 272\PRG272_Project\obj\Debug\PRG272_Project.pdb
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\bin\Debug\PRG272_Project.exe.config
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\bin\Debug\PRG272_Project.exe
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\bin\Debug\PRG272_Project.pdb
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.csproj.AssemblyReference.cache
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.Properties.Resources.resources
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.StudentManagementForm.resources
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.csproj.GenerateResource.cache
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.csproj.CoreCompileInputs.cache
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.exe
+C:\Users\aidan\Downloads\PRG Crud1\PRG272_Project\obj\Debug\PRG272_Project.pdb

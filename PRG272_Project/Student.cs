@@ -62,6 +62,64 @@ namespace PRG272_Project
                 // Show error message
                 MessageBox.Show(text: $"Something went wrong when saving the student: {ex.Message}", caption: "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+      
         }
+
+        //Uodates and deleting section-J
+        public void UpdateStudentInTextFile()
+        {
+            try
+            {
+                List<Student> students = DataHandler.LoadStudentsFromTextFile();
+                var existingStudent = students.FirstOrDefault(s => s.StudentId == this.StudentId);
+
+                if (existingStudent != null)
+                {
+                    existingStudent.Name = this.Name;
+                    existingStudent.Surname = this.Surname;
+                    existingStudent.Age = this.Age;
+                    existingStudent.Course = this.Course;
+
+                    DataHandler.SaveStudentsToTextFile(students);
+
+                    MessageBox.Show("Student information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Student not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static void DeleteStudentFromTextFile(string studentId)
+        {
+            try
+            {
+                List<Student> students = DataHandler.LoadStudentsFromTextFile();
+                var studentToDelete = students.FirstOrDefault(s => s.StudentId == studentId);
+
+                if (studentToDelete != null)
+                {
+                    students.Remove(studentToDelete);
+
+                    DataHandler.SaveStudentsToTextFile(students);
+
+                    MessageBox.Show("Student deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Student not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
