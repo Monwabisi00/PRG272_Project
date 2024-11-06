@@ -11,6 +11,7 @@ namespace PRG272_Project
     internal static class DataHandler
     {
         public const string StudentsTextFilePath = "students.txt";
+        public const string SummaryTextFilePath = "summary.txt";
 
         public static List<Student> LoadStudentsFromTextFile()
         {
