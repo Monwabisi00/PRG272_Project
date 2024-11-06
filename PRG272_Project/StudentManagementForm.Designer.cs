@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabViewAllStudents = new System.Windows.Forms.TabPage();
+            this.btnRefreshTableData = new System.Windows.Forms.Button();
             this.btnSearchStudent = new System.Windows.Forms.Button();
             this.txtSearchStudent = new System.Windows.Forms.TextBox();
             this.btnNavigateNext = new System.Windows.Forms.Button();
@@ -39,6 +40,12 @@
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
             this.tabAddStudent = new System.Windows.Forms.TabPage();
             this.grpBoxAddStudent = new System.Windows.Forms.GroupBox();
+            this.cmbNewStudentCourse = new System.Windows.Forms.ComboBox();
+            this.sedNewStudentAge = new System.Windows.Forms.NumericUpDown();
+            this.btnAddNewStudent = new System.Windows.Forms.Button();
+            this.txtNewStudentSurname = new System.Windows.Forms.TextBox();
+            this.txtNewStudentName = new System.Windows.Forms.TextBox();
+            this.txtNewStudentId = new System.Windows.Forms.TextBox();
             this.lblNewStudentCourse = new System.Windows.Forms.Label();
             this.lblNewStudentAge = new System.Windows.Forms.Label();
             this.lblNewStudentSurname = new System.Windows.Forms.Label();
@@ -47,19 +54,17 @@
             this.tabUpdateStudent = new System.Windows.Forms.TabPage();
             this.tabDeleteStudent = new System.Windows.Forms.TabPage();
             this.tabSummaryReport = new System.Windows.Forms.TabPage();
-            this.txtNewStudentId = new System.Windows.Forms.TextBox();
-            this.txtNewStudentName = new System.Windows.Forms.TextBox();
-            this.txtNewStudentSurname = new System.Windows.Forms.TextBox();
-            this.btnAddNewStudent = new System.Windows.Forms.Button();
-            this.sedNewStudentAge = new System.Windows.Forms.NumericUpDown();
-            this.cmbNewStudentCourse = new System.Windows.Forms.ComboBox();
-            this.btnRefreshTableData = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblAverage = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtAverage = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabViewAllStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
             this.tabAddStudent.SuspendLayout();
             this.grpBoxAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sedNewStudentAge)).BeginInit();
+            this.tabSummaryReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -91,6 +96,16 @@
             this.tabViewAllStudents.TabIndex = 3;
             this.tabViewAllStudents.Text = "View All Students";
             this.tabViewAllStudents.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshTableData
+            // 
+            this.btnRefreshTableData.Location = new System.Drawing.Point(406, 389);
+            this.btnRefreshTableData.Name = "btnRefreshTableData";
+            this.btnRefreshTableData.Size = new System.Drawing.Size(127, 30);
+            this.btnRefreshTableData.TabIndex = 7;
+            this.btnRefreshTableData.Text = "Refresh Table Data";
+            this.btnRefreshTableData.UseVisualStyleBackColor = true;
+            this.btnRefreshTableData.Click += new System.EventHandler(this.btnRefreshTableData_Click);
             // 
             // btnSearchStudent
             // 
@@ -191,6 +206,72 @@
             this.grpBoxAddStudent.TabStop = false;
             this.grpBoxAddStudent.Text = "Add new student";
             // 
+            // cmbNewStudentCourse
+            // 
+            this.cmbNewStudentCourse.FormattingEnabled = true;
+            this.cmbNewStudentCourse.Items.AddRange(new object[] {
+            "Computer Science",
+            "Mathematics",
+            "Engineering",
+            "Health Sciences",
+            "Physics",
+            "Chemistry",
+            "Environmental Studies",
+            "Graphic Design",
+            "Business Administration"});
+            this.cmbNewStudentCourse.Location = new System.Drawing.Point(201, 194);
+            this.cmbNewStudentCourse.Name = "cmbNewStudentCourse";
+            this.cmbNewStudentCourse.Size = new System.Drawing.Size(160, 21);
+            this.cmbNewStudentCourse.TabIndex = 12;
+            // 
+            // sedNewStudentAge
+            // 
+            this.sedNewStudentAge.Location = new System.Drawing.Point(201, 160);
+            this.sedNewStudentAge.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.sedNewStudentAge.Name = "sedNewStudentAge";
+            this.sedNewStudentAge.Size = new System.Drawing.Size(160, 20);
+            this.sedNewStudentAge.TabIndex = 11;
+            this.sedNewStudentAge.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            // 
+            // btnAddNewStudent
+            // 
+            this.btnAddNewStudent.Location = new System.Drawing.Point(376, 250);
+            this.btnAddNewStudent.Name = "btnAddNewStudent";
+            this.btnAddNewStudent.Size = new System.Drawing.Size(107, 32);
+            this.btnAddNewStudent.TabIndex = 10;
+            this.btnAddNewStudent.Text = "Add Student";
+            this.btnAddNewStudent.UseVisualStyleBackColor = true;
+            this.btnAddNewStudent.Click += new System.EventHandler(this.btnAddNewStudent_Click);
+            // 
+            // txtNewStudentSurname
+            // 
+            this.txtNewStudentSurname.Location = new System.Drawing.Point(201, 122);
+            this.txtNewStudentSurname.Name = "txtNewStudentSurname";
+            this.txtNewStudentSurname.Size = new System.Drawing.Size(160, 20);
+            this.txtNewStudentSurname.TabIndex = 7;
+            // 
+            // txtNewStudentName
+            // 
+            this.txtNewStudentName.Location = new System.Drawing.Point(201, 92);
+            this.txtNewStudentName.Name = "txtNewStudentName";
+            this.txtNewStudentName.Size = new System.Drawing.Size(160, 20);
+            this.txtNewStudentName.TabIndex = 6;
+            // 
+            // txtNewStudentId
+            // 
+            this.txtNewStudentId.Location = new System.Drawing.Point(201, 59);
+            this.txtNewStudentId.Name = "txtNewStudentId";
+            this.txtNewStudentId.Size = new System.Drawing.Size(160, 20);
+            this.txtNewStudentId.TabIndex = 5;
+            // 
             // lblNewStudentCourse
             // 
             this.lblNewStudentCourse.AutoSize = true;
@@ -257,6 +338,10 @@
             // 
             // tabSummaryReport
             // 
+            this.tabSummaryReport.Controls.Add(this.txtAverage);
+            this.tabSummaryReport.Controls.Add(this.txtTotal);
+            this.tabSummaryReport.Controls.Add(this.lblAverage);
+            this.tabSummaryReport.Controls.Add(this.lblTotal);
             this.tabSummaryReport.Location = new System.Drawing.Point(4, 22);
             this.tabSummaryReport.Name = "tabSummaryReport";
             this.tabSummaryReport.Size = new System.Drawing.Size(896, 438);
@@ -264,81 +349,41 @@
             this.tabSummaryReport.Text = "Summary Report";
             this.tabSummaryReport.UseVisualStyleBackColor = true;
             // 
-            // txtNewStudentId
+            // lblTotal
             // 
-            this.txtNewStudentId.Location = new System.Drawing.Point(201, 59);
-            this.txtNewStudentId.Name = "txtNewStudentId";
-            this.txtNewStudentId.Size = new System.Drawing.Size(160, 20);
-            this.txtNewStudentId.TabIndex = 5;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(341, 177);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(190, 31);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "Total Students";
             // 
-            // txtNewStudentName
+            // lblAverage
             // 
-            this.txtNewStudentName.Location = new System.Drawing.Point(201, 92);
-            this.txtNewStudentName.Name = "txtNewStudentName";
-            this.txtNewStudentName.Size = new System.Drawing.Size(160, 20);
-            this.txtNewStudentName.TabIndex = 6;
+            this.lblAverage.AutoSize = true;
+            this.lblAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAverage.Location = new System.Drawing.Point(260, 224);
+            this.lblAverage.Name = "lblAverage";
+            this.lblAverage.Size = new System.Drawing.Size(271, 31);
+            this.lblAverage.TabIndex = 1;
+            this.lblAverage.Text = "Average Student Age";
             // 
-            // txtNewStudentSurname
+            // txtTotal
             // 
-            this.txtNewStudentSurname.Location = new System.Drawing.Point(201, 122);
-            this.txtNewStudentSurname.Name = "txtNewStudentSurname";
-            this.txtNewStudentSurname.Size = new System.Drawing.Size(160, 20);
-            this.txtNewStudentSurname.TabIndex = 7;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(537, 177);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 38);
+            this.txtTotal.TabIndex = 2;
             // 
-            // btnAddNewStudent
+            // txtAverage
             // 
-            this.btnAddNewStudent.Location = new System.Drawing.Point(376, 250);
-            this.btnAddNewStudent.Name = "btnAddNewStudent";
-            this.btnAddNewStudent.Size = new System.Drawing.Size(107, 32);
-            this.btnAddNewStudent.TabIndex = 10;
-            this.btnAddNewStudent.Text = "Add Student";
-            this.btnAddNewStudent.UseVisualStyleBackColor = true;
-            this.btnAddNewStudent.Click += new System.EventHandler(this.btnAddNewStudent_Click);
-            // 
-            // sedNewStudentAge
-            // 
-            this.sedNewStudentAge.Location = new System.Drawing.Point(201, 160);
-            this.sedNewStudentAge.Minimum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.sedNewStudentAge.Name = "sedNewStudentAge";
-            this.sedNewStudentAge.Size = new System.Drawing.Size(160, 20);
-            this.sedNewStudentAge.TabIndex = 11;
-            this.sedNewStudentAge.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
-            // 
-            // cmbNewStudentCourse
-            // 
-            this.cmbNewStudentCourse.FormattingEnabled = true;
-            this.cmbNewStudentCourse.Items.AddRange(new object[] {
-            "Computer Science",
-            "Mathematics",
-            "Engineering",
-            "Health Sciences",
-            "Physics",
-            "Chemistry",
-            "Environmental Studies",
-            "Graphic Design",
-            "Business Administration"});
-            this.cmbNewStudentCourse.Location = new System.Drawing.Point(201, 194);
-            this.cmbNewStudentCourse.Name = "cmbNewStudentCourse";
-            this.cmbNewStudentCourse.Size = new System.Drawing.Size(160, 21);
-            this.cmbNewStudentCourse.TabIndex = 12;
-            // 
-            // btnRefreshTableData
-            // 
-            this.btnRefreshTableData.Location = new System.Drawing.Point(406, 389);
-            this.btnRefreshTableData.Name = "btnRefreshTableData";
-            this.btnRefreshTableData.Size = new System.Drawing.Size(127, 30);
-            this.btnRefreshTableData.TabIndex = 7;
-            this.btnRefreshTableData.Text = "Refresh Table Data";
-            this.btnRefreshTableData.UseVisualStyleBackColor = true;
-            this.btnRefreshTableData.Click += new System.EventHandler(this.btnRefreshTableData_Click);
+            this.txtAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAverage.Location = new System.Drawing.Point(537, 224);
+            this.txtAverage.Name = "txtAverage";
+            this.txtAverage.Size = new System.Drawing.Size(100, 38);
+            this.txtAverage.TabIndex = 3;
             // 
             // StudentManagementForm
             // 
@@ -358,6 +403,8 @@
             this.grpBoxAddStudent.ResumeLayout(false);
             this.grpBoxAddStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sedNewStudentAge)).EndInit();
+            this.tabSummaryReport.ResumeLayout(false);
+            this.tabSummaryReport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,6 +437,10 @@
         private System.Windows.Forms.NumericUpDown sedNewStudentAge;
         private System.Windows.Forms.ComboBox cmbNewStudentCourse;
         private System.Windows.Forms.Button btnRefreshTableData;
+        private System.Windows.Forms.Label lblAverage;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtAverage;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }
 
