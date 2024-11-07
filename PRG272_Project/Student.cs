@@ -65,7 +65,7 @@ namespace PRG272_Project
       
         }
 
-        //Uodates and deleting section-J
+        //Updates and deleting section-J
         public void UpdateStudentInTextFile()
         {
             try

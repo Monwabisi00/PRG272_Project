@@ -32,6 +32,7 @@ namespace PRG272_Project
         {
             //Load the students to display on the grid
             dataGridStudents.DataSource = DataHandler.LoadStudentsFromTextFile();
+            dataGridViewStudents.DataSource = DataHandler.LoadStudentsFromTextFile();
 
             // Ensure we select the first cell if there are students to display
             if (dataGridStudents.Rows.Count > 0)
@@ -223,6 +224,9 @@ namespace PRG272_Project
                 //Second Data field(I could fix it or remove it)
         private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+
             if (e.RowIndex >= 0) // Ensure a valid row is selected
             {
                 DataGridViewRow row = dataGridStudents.Rows[e.RowIndex];
@@ -233,6 +237,11 @@ namespace PRG272_Project
                 nudUpdateStudentAge.Value = Convert.ToDecimal(row.Cells["Age"].Value);
                 cmbUpdateStudentCourse.Text = row.Cells["Course"].Value.ToString();
             }
+        }
+
+        private void sedNewStudentAge_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
