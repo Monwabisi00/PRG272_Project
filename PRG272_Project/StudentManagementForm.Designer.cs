@@ -53,6 +53,7 @@
             this.lblNewStudentName = new System.Windows.Forms.Label();
             this.lblNewStudentId = new System.Windows.Forms.Label();
             this.tabUpdateStudent = new System.Windows.Forms.TabPage();
+            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.nudUpdateStudentAge = new System.Windows.Forms.NumericUpDown();
             this.cmbUpdateStudentCourse = new System.Windows.Forms.ComboBox();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
@@ -69,7 +70,7 @@
             this.lblAverage = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dataHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabViewAllStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
@@ -77,10 +78,10 @@
             this.grpBoxAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sedNewStudentAge)).BeginInit();
             this.tabUpdateStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpdateStudentAge)).BeginInit();
             this.tabSummaryReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataHandlerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -196,7 +197,7 @@
             this.tabAddStudent.Controls.Add(this.grpBoxAddStudent);
             this.tabAddStudent.Location = new System.Drawing.Point(4, 22);
             this.tabAddStudent.Name = "tabAddStudent";
-            this.tabAddStudent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAddStudent.Padding = new System.Windows.Forms.Padding(3);
             this.tabAddStudent.Size = new System.Drawing.Size(896, 438);
             this.tabAddStudent.TabIndex = 0;
             this.tabAddStudent.Text = "Add Student";
@@ -336,6 +337,7 @@
             // 
             // tabUpdateStudent
             // 
+            this.tabUpdateStudent.Controls.Add(this.label1);
             this.tabUpdateStudent.Controls.Add(this.dataGridViewStudents);
             this.tabUpdateStudent.Controls.Add(this.nudUpdateStudentAge);
             this.tabUpdateStudent.Controls.Add(this.cmbUpdateStudentCourse);
@@ -349,16 +351,24 @@
             this.tabUpdateStudent.Controls.Add(this.label);
             this.tabUpdateStudent.Location = new System.Drawing.Point(4, 22);
             this.tabUpdateStudent.Name = "tabUpdateStudent";
-            this.tabUpdateStudent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUpdateStudent.Padding = new System.Windows.Forms.Padding(3);
             this.tabUpdateStudent.Size = new System.Drawing.Size(896, 438);
             this.tabUpdateStudent.TabIndex = 1;
             this.tabUpdateStudent.Text = "Update Student";
             this.tabUpdateStudent.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewStudents
+            // 
+            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudents.Location = new System.Drawing.Point(378, 68);
+            this.dataGridViewStudents.Name = "dataGridViewStudents";
+            this.dataGridViewStudents.Size = new System.Drawing.Size(457, 282);
+            this.dataGridViewStudents.TabIndex = 14;
+            // 
             // nudUpdateStudentAge
             // 
             this.nudUpdateStudentAge.Location = new System.Drawing.Point(105, 128);
-            this.nudUpdateStudentAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudUpdateStudentAge.Margin = new System.Windows.Forms.Padding(2);
             this.nudUpdateStudentAge.Name = "nudUpdateStudentAge";
             this.nudUpdateStudentAge.Size = new System.Drawing.Size(163, 20);
             this.nudUpdateStudentAge.TabIndex = 13;
@@ -382,7 +392,7 @@
             "Graphic Design",
             "Business Administration"});
             this.cmbUpdateStudentCourse.Location = new System.Drawing.Point(105, 160);
-            this.cmbUpdateStudentCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUpdateStudentCourse.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUpdateStudentCourse.Name = "cmbUpdateStudentCourse";
             this.cmbUpdateStudentCourse.Size = new System.Drawing.Size(164, 21);
             this.cmbUpdateStudentCourse.TabIndex = 12;
@@ -390,7 +400,7 @@
             // btnDeleteStudent
             // 
             this.btnDeleteStudent.Location = new System.Drawing.Point(205, 316);
-            this.btnDeleteStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(131, 34);
             this.btnDeleteStudent.TabIndex = 10;
@@ -401,7 +411,7 @@
             // btnUpdateStudent
             // 
             this.btnUpdateStudent.Location = new System.Drawing.Point(36, 316);
-            this.btnUpdateStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateStudent.Name = "btnUpdateStudent";
             this.btnUpdateStudent.Size = new System.Drawing.Size(131, 34);
             this.btnUpdateStudent.TabIndex = 9;
@@ -412,7 +422,7 @@
             // txtUpdateStudentSurname
             // 
             this.txtUpdateStudentSurname.Location = new System.Drawing.Point(105, 94);
-            this.txtUpdateStudentSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUpdateStudentSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtUpdateStudentSurname.Name = "txtUpdateStudentSurname";
             this.txtUpdateStudentSurname.Size = new System.Drawing.Size(164, 20);
             this.txtUpdateStudentSurname.TabIndex = 5;
@@ -420,7 +430,7 @@
             // txtUpdateStudentName
             // 
             this.txtUpdateStudentName.Location = new System.Drawing.Point(105, 68);
-            this.txtUpdateStudentName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUpdateStudentName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUpdateStudentName.Name = "txtUpdateStudentName";
             this.txtUpdateStudentName.Size = new System.Drawing.Size(164, 20);
             this.txtUpdateStudentName.TabIndex = 4;
@@ -518,13 +528,15 @@
             // 
             this.dataHandlerBindingSource.DataSource = typeof(PRG272_Project.DataHandler);
             // 
-            // dataGridViewStudents
+            // label1
             // 
-            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(378, 68);
-            this.dataGridViewStudents.Name = "dataGridViewStudents";
-            this.dataGridViewStudents.Size = new System.Drawing.Size(457, 282);
-            this.dataGridViewStudents.TabIndex = 14;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(375, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Please select the row you want to update or delete.";
             // 
             // StudentManagementForm
             // 
@@ -546,11 +558,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.sedNewStudentAge)).EndInit();
             this.tabUpdateStudent.ResumeLayout(false);
             this.tabUpdateStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpdateStudentAge)).EndInit();
             this.tabSummaryReport.ResumeLayout(false);
             this.tabSummaryReport.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataHandlerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,6 +610,7 @@
         private System.Windows.Forms.NumericUpDown nudUpdateStudentAge;
         private System.Windows.Forms.BindingSource dataHandlerBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.Label label1;
     }
 }
 

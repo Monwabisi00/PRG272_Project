@@ -1,3 +1,7 @@
-600871,Jamie,Palmer,18,Computer Science
-600654,Ryan, Thurbon ,18,Mathematics
- 600994,Monwabisi Mbongeni ,Mashiane,20,Physics
+600994,Monwabisi Mbongeni,Mashiane,24,Business Administration
+600871,Arnoldus Christiaan,Vlok,20,Engineering
+600654,Ryan,Thurbon,20,Computer Science
+600658,Jamie,Palmer,20,Mathematics
+123456,Tony,Stark,42,Physics
+654321,Peter,Parker,18,Chemistry
+987654,Miles,Morales,15,Graphic Design

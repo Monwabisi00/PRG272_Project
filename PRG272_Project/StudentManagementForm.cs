@@ -165,17 +165,42 @@ namespace PRG272_Project
 
         private void btnAddNewStudent_Click(object sender, EventArgs e)
         {
-            string studentId = txtNewStudentId.Text;
-            string studentName = txtNewStudentName.Text;
-            string studentSurname = txtNewStudentSurname.Text;
+            // error handling for ensuring all input fields are filled out
+            if (string.IsNullOrWhiteSpace(txtNewStudentId.Text) ||
+                string.IsNullOrWhiteSpace(txtNewStudentName.Text) ||
+                string.IsNullOrWhiteSpace(txtNewStudentSurname.Text) ||
+                string.IsNullOrWhiteSpace(cmbNewStudentCourse.Text))
+            {
+                MessageBox.Show("Please fill out all fields before adding a student.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string studentId = ValidID(txtNewStudentId.Text); // valid ID's have 6 numbers
+            string studentName = ValidName(txtNewStudentName.Text); // valid names don't contain any numbers
+            string studentSurname = ValidName(txtNewStudentSurname.Text);
             decimal studentAge = sedNewStudentAge.Value;
             string studentCourse = cmbNewStudentCourse.Text;
+            if (studentName == null || studentSurname == null || studentId == null) 
+            {
+                txtNewStudentId.Text = "";
+                txtNewStudentName.Text = "";
+                txtNewStudentSurname.Text = "";
+                cmbNewStudentCourse.Text = "";
+                return;
+            }
+            else
+            {
+                Student newStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
 
-            Student newStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
+                newStudent.SaveToTextFile();
 
-            newStudent.SaveToTextFile();
+                ShowReport();
 
-            ShowReport();
+                txtNewStudentId.Text = "";
+                txtNewStudentName.Text = "";
+                txtNewStudentSurname.Text = "";
+                cmbNewStudentCourse.Text = "";
+            }
         }
 
         private void btnRefreshTableData_Click(object sender, EventArgs e)
@@ -186,29 +211,45 @@ namespace PRG272_Project
 
         //update and delete starts here.
         private void btnUpdateStudent_Click(object sender, EventArgs e)
-{
-    if (dataGridStudents.CurrentRow != null)
-    {
-        string studentId = dataGridStudents.CurrentRow.Cells["StudentId"].Value.ToString();
-        string studentName = txtUpdateStudentName.Text;
-        string studentSurname = txtUpdateStudentSurname.Text;
-        decimal studentAge = nudUpdateStudentAge.Value;
-        string studentCourse = cmbUpdateStudentCourse.Text;
+        {
+            if (dataGridViewStudents.CurrentRow != null)
+            {
+                // error handling for ensuring all input fields are filled out
+                if (string.IsNullOrWhiteSpace(txtUpdateStudentName.Text) ||
+                    string.IsNullOrWhiteSpace(txtUpdateStudentSurname.Text) ||
+                    string.IsNullOrWhiteSpace(cmbUpdateStudentCourse.Text))
+                {
+                    MessageBox.Show("Please fill out all fields before updating.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-        Student updatedStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
-        updatedStudent.UpdateStudentInTextFile();
+                DataGridViewRow row = dataGridViewStudents.CurrentRow;
 
-        ShowAllStudents();
-        ShowReport();
-    }
-}
+                string studentId = row.Cells["StudentId"].Value.ToString();
+                string studentName = txtUpdateStudentName.Text;
+                string studentSurname = txtUpdateStudentSurname.Text;
+                decimal studentAge = nudUpdateStudentAge.Value;
+                string studentCourse = cmbUpdateStudentCourse.Text;
+
+                Student updatedStudent = new Student(studentId, studentName, studentSurname, studentAge, studentCourse);
+                updatedStudent.UpdateStudentInTextFile();
+
+                ShowAllStudents();
+                ShowReport();
+            }
+            else
+            {
+                MessageBox.Show("No student selected for updating.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void btnDeleteStudent_Click(object sender, EventArgs e)
         {
 
-            if (dataGridStudents.CurrentRow != null)
+            if (dataGridViewStudents.CurrentRow != null)
             {
-                string studentId = dataGridStudents.CurrentRow.Cells["StudentId"].Value.ToString();
+                DataGridViewRow row = dataGridViewStudents.CurrentRow;
+                string studentId = row.Cells["StudentId"].Value.ToString();
 
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this student?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -224,12 +265,9 @@ namespace PRG272_Project
                 //Second Data field(I could fix it or remove it)
         private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
             if (e.RowIndex >= 0) // Ensure a valid row is selected
             {
-                DataGridViewRow row = dataGridStudents.Rows[e.RowIndex];
+                DataGridViewRow row = dataGridViewStudents.Rows[e.RowIndex];
 
                 // Load data from selected row into update fields
                 txtUpdateStudentName.Text = row.Cells["Name"].Value.ToString();
@@ -242,6 +280,33 @@ namespace PRG272_Project
         private void sedNewStudentAge_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private string ValidID(string studentID)
+        {
+            if(studentID.Length != 6)
+            {
+                MessageBox.Show("Invalid ID. Does not contain 6 digits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            else
+            {
+                return studentID;
+            }
+            
+        }
+
+        private string ValidName(string name)
+        {
+            foreach (char character in name)
+            {
+                if (char.IsDigit(character))
+                {
+                    MessageBox.Show("Invalid. Name or Surname contains a number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null; // Return null if number is found.
+                }
+            }
+            return name;
         }
     }
 }
