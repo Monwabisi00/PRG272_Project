@@ -1,1 +1,1 @@
-Total Students: 4, Average Student Age: 19
+Total Students: 4, Average Student Age: 18,75

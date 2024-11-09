@@ -1,3 +1,3 @@
-600871,Jamie,Palmer,18,Computer Science
 600654,Ryan, Thurbon ,18,Mathematics
- 600994,Monwabisi Mbongeni ,Mashiane,20,Physics
+600994,Monwabisi Mbongeni ,Mashiane,20,Physics
+600871,Arno,Vlok,19,Computer Science
