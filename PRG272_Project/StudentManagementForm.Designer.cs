@@ -53,6 +53,7 @@
             this.lblNewStudentName = new System.Windows.Forms.Label();
             this.lblNewStudentId = new System.Windows.Forms.Label();
             this.tabUpdateStudent = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.nudUpdateStudentAge = new System.Windows.Forms.NumericUpDown();
             this.cmbUpdateStudentCourse = new System.Windows.Forms.ComboBox();
@@ -70,7 +71,6 @@
             this.lblAverage = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dataHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabViewAllStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
@@ -357,8 +357,19 @@
             this.tabUpdateStudent.Text = "Update Student";
             this.tabUpdateStudent.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(375, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Please select the row you want to update or delete.";
+            // 
             // dataGridViewStudents
             // 
+            this.dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStudents.Location = new System.Drawing.Point(378, 68);
             this.dataGridViewStudents.Name = "dataGridViewStudents";
@@ -527,16 +538,6 @@
             // dataHandlerBindingSource
             // 
             this.dataHandlerBindingSource.DataSource = typeof(PRG272_Project.DataHandler);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(375, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 16);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Please select the row you want to update or delete.";
             // 
             // StudentManagementForm
             // 

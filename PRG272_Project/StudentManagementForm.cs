@@ -64,6 +64,9 @@ namespace PRG272_Project
             // Calculate the average age safely, handling empty lists
             decimal averageAge = DataHandler.LoadStudentsFromTextFile().Any() ? DataHandler.LoadStudentsFromTextFile().Average(student => student.Age) : 0;
             txtAverage.Text = $"{averageAge:F2}";
+            // ensures the user cannot edit the textbox
+            txtTotal.Enabled = false;
+            txtAverage.Enabled = false;
         }
 
         //Enable/Disable nav buttons based on logic
