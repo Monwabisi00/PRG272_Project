@@ -265,20 +265,6 @@ namespace PRG272_Project
                 }
             }
         }
-                //Second Data field(I could fix it or remove it)
-        private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
-            {
-                DataGridViewRow row = dataGridViewStudents.Rows[e.RowIndex];
-
-                // Load data from selected row into update fields
-                txtUpdateStudentName.Text = row.Cells["Name"].Value.ToString();
-                txtUpdateStudentSurname.Text = row.Cells["Surname"].Value.ToString();
-                nudUpdateStudentAge.Value = Convert.ToDecimal(row.Cells["Age"].Value);
-                cmbUpdateStudentCourse.Text = row.Cells["Course"].Value.ToString();
-            }
-        }
 
         private string ValidID(string studentID)
         {
@@ -305,6 +291,20 @@ namespace PRG272_Project
                 }
             }
             return name;
+        }
+
+        private void dataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            {
+                DataGridViewRow row = dataGridViewStudents.Rows[e.RowIndex];
+
+                // Load data from selected row into update fields
+                txtUpdateStudentName.Text = row.Cells["Name"].Value.ToString();
+                txtUpdateStudentSurname.Text = row.Cells["Surname"].Value.ToString();
+                nudUpdateStudentAge.Value = Convert.ToDecimal(row.Cells["Age"].Value);
+                cmbUpdateStudentCourse.Text = row.Cells["Course"].Value.ToString();
+            }
         }
     }
 }

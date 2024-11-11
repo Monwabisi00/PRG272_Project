@@ -374,6 +374,7 @@
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.Size = new System.Drawing.Size(457, 282);
             this.dataGridViewStudents.TabIndex = 14;
+            this.dataGridViewStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellClick);
             // 
             // nudUpdateStudentAge
             // 
