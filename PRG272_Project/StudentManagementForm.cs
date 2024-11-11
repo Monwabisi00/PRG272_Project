@@ -280,11 +280,6 @@ namespace PRG272_Project
             }
         }
 
-        private void sedNewStudentAge_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private string ValidID(string studentID)
         {
             if(studentID.Length != 6)

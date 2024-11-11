@@ -257,7 +257,6 @@
             0,
             0,
             0});
-            this.sedNewStudentAge.ValueChanged += new System.EventHandler(this.sedNewStudentAge_ValueChanged);
             // 
             // btnAddNewStudent
             // 
